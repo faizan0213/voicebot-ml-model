@@ -166,7 +166,7 @@ export default function Home() {
                 opacity: isLoading ? 0.6 : 1,
               }}
             >
-              <span style={styles.micIcon}>🎤</span>
+              <span style={styles.micIcon}>🎙️</span>
             </button>
           </div>
         </div>
@@ -273,6 +273,7 @@ const styles = {
     transition: "all 0.3s ease",
     fontFamily: "inherit",
     backgroundColor: "#f8f9fa",
+    color: "#000000",
   },
   buttonGroup: {
     display: "flex",
