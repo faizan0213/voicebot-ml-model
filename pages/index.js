@@ -20,8 +20,8 @@ export default function Home() {
   const speakOutLoud = (text) => {
     if (!text) return;
     const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = "en-US"; // Hindi ke liye "hi-IN" bhi use kar sakte ho
-    utterance.rate = 1; // speed control
+    utterance.lang = "en-US"; 
+    utterance.rate = 1;  
     speechSynthesis.speak(utterance);
   };
 
@@ -33,14 +33,14 @@ export default function Home() {
     }
 
     const recognition = new window.webkitSpeechRecognition();
-    recognition.lang = "en-US"; // Hindi ke liye "hi-IN"
+    recognition.lang = "en-US";  
     recognition.interimResults = false;
     recognition.maxAlternatives = 1;
 
     recognition.onresult = (event) => {
       const speechResult = event.results[0][0].transcript;
-      setQuestion(speechResult); // speech ko input box me daal do
-      askBotWithSpeech(speechResult); // direct bot se puchho
+      setQuestion(speechResult);  
+      askBotWithSpeech(speechResult);  
     };
 
     recognition.onerror = (event) => {
@@ -59,7 +59,7 @@ export default function Home() {
 
     const data = await res.json();
     setAnswer(data.answer);
-    speakOutLoud(data.answer); // auto speak reply
+    speakOutLoud(data.answer);  
   };
 
   return (
